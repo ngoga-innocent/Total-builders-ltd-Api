@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #f6f6f6;
+        padding: 20px;
+        color: #333;
+      }
+      .container {
+        background: white;
+        border-radius: 8px;
+        padding: 30px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      h2 {
+        color: #FD9800;
+        margin-bottom: 20px;
+      }
+      p span {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>📩 New Contact Request</h2>
+      <p><span>Name:</span> {{ name }}</p>
+      <p><span>Email:</span> {{ email }}</p>
+      <p><span>Phone:</span> {{ phone }}</p>
+      <p><span>Message:</span></p>
+      <p>{{ message }}</p>
+    </div>
+  </body>
+</html>
