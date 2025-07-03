@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'cloudinary',
     'cloudinary_storage',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -149,3 +150,17 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'housemajorrwanda@gmail.com'         # Replace this
 EMAIL_HOST_PASSWORD = 'auxh kwwn ubon jxjt'      # And this
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Format', 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source'],
+            ['Image', 'Table'],
+        ],
+        'height': 300,
+        'width': '100%',
+    }
+}

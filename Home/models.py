@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 class Services(models.Model):
     title=models.TextField()
@@ -15,9 +15,9 @@ class Project(models.Model):
     thumbnail=models.ImageField(null=True,blank=True)
     location = models.TextField(null=True, blank=True)
     duration = models.TextField(null=True, blank=True)
-    description = models.TextField(null=True, blank=True)  # NEW FIELD
+    description = RichTextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
         return self.title
 class ProjectImage(models.Model):
