@@ -1,14 +1,19 @@
 from django.contrib import admin
-from .models import Services, Project, Testimonial, OurClients,OurTeam,ContactMessage,Quote
+from .models import Services, Project, Testimonial, OurClients,OurTeam,ContactMessage,Quote,ProjectImage
 
 @admin.register(Services)
 class ServicesAdmin(admin.ModelAdmin):
     list_display = ('title',)
     search_fields = ('title', 'description')
     list_filter = ('title',)
+class ProjectImageInline(admin.TabularInline):
+    model = ProjectImage
+    extra = 1
+
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
+    inlines = [ProjectImageInline]
     list_display = ('title', 'location', 'duration', 'created_at')
     search_fields = ('title', 'location')
     list_filter = ('location', 'created_at')

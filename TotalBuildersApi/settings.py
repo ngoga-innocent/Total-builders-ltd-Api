@@ -91,6 +91,13 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         os.getenv("DATABASE_URL"),
+#         conn_max_age=600,
+#         ssl_require=True  # 👈 Force SSL (important for Render DBs)
+#     )
+# }
 
 DATABASES['default']=dj_database_url.parse(os.getenv("DATABASE_URL"))
 # Password validation

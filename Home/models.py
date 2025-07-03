@@ -11,14 +11,21 @@ class Services(models.Model):
     class Meta:
         verbose_name_plural='Services'
 class Project(models.Model):
-    image=models.ImageField(upload_to='Project/')
-    title=models.TextField(null=True,blank=True)
-    location=models.TextField(null=True,blank=True)
-    duration=models.TextField(null=True,blank=True)
-    created_at=models.DateTimeField(auto_now_add=True)
+    title = models.TextField(null=True, blank=True)
+    thumbnail=models.ImageField(null=True,blank=True)
+    location = models.TextField(null=True, blank=True)
+    duration = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)  # NEW FIELD
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return self.title
+class ProjectImage(models.Model):
+    project = models.ForeignKey(Project, related_name='images', on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='Project/')
+
+    def __str__(self):
+        return f"Image for {self.project.title}"
     
 class Testimonial(models.Model):
     name=models.CharField(max_length=200)
@@ -59,6 +66,7 @@ class Quote(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.TextField()
+    attachment=models.FileField(upload_to='Quotes/',blank=True,null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
