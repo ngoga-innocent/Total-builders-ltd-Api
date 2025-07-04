@@ -148,8 +148,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'housemajorrwanda@gmail.com'         # Replace this
-EMAIL_HOST_PASSWORD = 'auxh kwwn ubon jxjt'      # And this
+# EMAIL_HOST_USER = os.getenv("EMAIL")        # Replace this
+# EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")     # And this
+EMAIL_HOST_USER = 'totalbuilderslimited@gmail.com'         # Replace this
+EMAIL_HOST_PASSWORD = 'xjeg orie wdwi amrb'      # And this
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'Custom',
