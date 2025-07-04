@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import Services, Project, Testimonial, OurClients,OurTeam,ContactMessage,Quote,ProjectImage
+from django.contrib.auth.models import User, Group
 
+admin.site.unregister(User)
+admin.site.unregister(Group)
 @admin.register(Services)
 class ServicesAdmin(admin.ModelAdmin):
     list_display = ('title',)
